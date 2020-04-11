@@ -1,0 +1,49 @@
+{
+   "albumTitle": "My Book",
+   "albumList": [
+      {
+         "title": "The Immortalists",
+         "artist": "Chloe Benjamin",
+         "thumbnail_image": "https://i.imgur.com/K3KJ3w4h.jpg",
+         "description": "If you were told the date of your death, how would it shape your...",
+         "status":"50% completed",
+         "statuscolor":"#b1b1b1",
+         "statuscolorp":"#b1b1b1",
+         "statusweight":"400",
+         "statuswidth":89,
+         "statusheight":16,
+         "statusmarginTop":9,
+         "statusunderlayColor":"#f8f8f8",
+         "width":0.5
+      },
+      {
+         "title": "Grist Mill Road",
+         "artist": "Christopher J.",
+         "thumbnail_image": "https://i.imgur.com/K3KJ3w4h.jpg",
+         "description": "Twenty-six years ago Hannah had her eye shot out. Now she wants...",
+         "status":"START READ",
+         "statuscolor":"#fd686b",
+         "statuscolorp":"#fff",
+         "statusweight":"600",
+         "statuswidth":82,
+         "statusheight":21,
+         "statusmarginTop":6,
+         "statusunderlayColor":"#fd686b",
+         "width":0
+      },
+      {
+         "title": "Street Art Activity Book",
+         "artist": "Mitchell Beazley",
+         "thumbnail_image": "https://i.imgur.com/K3KJ3w4h.jpg",
+         "description": "Street art is colorful, vibrant, diverse and exciting. Now you can...",
+         "status":"START READ",
+         "statuscolor":"#fd686b",
+         "statuscolorp":"#fff",
+         "statusweight":"600",
+         "statuswidth":82,
+         "statusheight":21,
+         "statusmarginTop":6,
+         "statusunderlayColor":"#fd686b",
+         "width":0
+      }
+]}
