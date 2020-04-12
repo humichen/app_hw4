@@ -7,7 +7,7 @@ const AlbumDetail = ({ album, navigation }) => {
       <View style={styles.cardContainerStyle}>
         <View style={styles.cardSectionStyle}>
           <TouchableOpacity 
-            onPress={() => {}} style={[styles.thumbnailContainerStyle, styles.cardSectionStyle]} underlayColor={"#f0f0f0"}  activeOpacity={0.5}
+            onPress={() => {}} style={[styles.thumbnailContainerStyle, styles.cardSectionStyle]} underlayColor={"#f0f0f0"} activeOpacity={0.6}
           >
             <View style={styles.thumbnailborderStyle}>
                <Image
@@ -23,9 +23,16 @@ const AlbumDetail = ({ album, navigation }) => {
             <Text style={styles.artistStyle}>{album.artist}</Text>
             <Text style={styles.wordStyle}>{album.description}</Text>
             <ProgressBar progress={album.width} style={styles.lineStyle} color={'#70b4a1'}/>
-            <TouchableHighlight onPress={() => {}} underlayColor={album.statusunderlayColor} style={{marginTop:album.statusmarginTop,width:album.statuswidth,height:album.statusheight,borderRadius:3,justifyContent:"center"}}>
+            <TouchableHighlight onPress={() =>{} }underlayColor={album.statusunderlayColor} style={{marginTop:album.statusmarginTop,width:album.statuswidth,height:album.statusheight,borderRadius:3,justifyContent:"center"}}>
               <Text style={{color:album.statuscolor,fontWeight:album.statusweight,fontSize:12}}>{album.status}</Text>
             </TouchableHighlight>
+            {/* <Text style={styles.statusStyle}>{album.status}</Text>
+            <Image
+              style={styles.statusimgStyle}
+              source={{
+                uri:album.statusimg
+              }}
+            /> */}
           </View>
           </TouchableOpacity>
         </View>   
@@ -77,15 +84,15 @@ const styles = StyleSheet.create({
     height:30,
     fontSize:12,
     color:"#b1b1b1",
-    marginTop:11
+    marginTop:11,
   },
   titleStyle:{
-    width:194,
+    width:200,
     height:22,
     fontSize:18,
     color:"#2e2e2e",
     fontWeight:"600",
-    marginTop:16
+    marginTop:16,
   },
   artistStyle:{
     width:194,
@@ -100,6 +107,18 @@ const styles = StyleSheet.create({
     height:3,
     marginTop:10,
     borderRadius:1.5
+  },
+  statusStyle:{
+    marginTop:9,
+    color:"#b1b1b1",
+    fontSize:12,
+    width:178,
+    height:16
+  },
+  statusimgStyle:{
+    marginTop:6,
+    width:82,
+    height:21
   }
 });
 
