@@ -2,7 +2,16 @@ import React from "react";
 import { StyleSheet, Text, View, Image, TouchableOpacity, Linking, Button,TouchableHighlight} from "react-native";
 import { ProgressBar, Colors } from 'react-native-paper';
 
+
+
 const AlbumDetail = ({ album, navigation }) => {
+
+  var buttonColor="#fd686b";
+  function changeButtonColor({buttonColor}){
+  if(buttonColor==="white"){
+    buttonColor = "#fd686b"; }
+  else {buttonColor = "white";}
+}
    return (
       <View style={styles.cardContainerStyle}>
         <View style={styles.cardSectionStyle}>
@@ -23,9 +32,14 @@ const AlbumDetail = ({ album, navigation }) => {
             <Text style={styles.artistStyle}>{album.artist}</Text>
             <Text style={styles.wordStyle}>{album.description}</Text>
             <ProgressBar progress={album.width} style={styles.lineStyle} color={'#70b4a1'}/>
-            <TouchableHighlight onPress={() =>{} }underlayColor={album.statusunderlayColor} style={{marginTop:album.statusmarginTop,width:album.statuswidth,height:album.statusheight,borderRadius:3,justifyContent:"center"}}>
+            <TouchableHighlight onPress={() =>{changeButtonColor(buttonColor)} } underlayColor={album.statusunderlayColor} style={{marginTop:album.statusmarginTop,width:album.statuswidth,height:album.statusheight,borderRadius:3,justifyContent:"center"}}>
               <Text style={{color:album.statuscolor,fontWeight:album.statusweight,fontSize:12}}>{album.status}</Text>
             </TouchableHighlight>
+            {/* <View style={{marginTop:album.statusmarginTop,width:album.statuswidth,height:album.statusheight,borderRadius:3,justifyContent:"center"}}>
+              <Button title={album.status} color={'white'} onPress={() =>{changeButtonColor(buttonColor)}} style={{fontSize:12,color:"#fd686b"}}/>
+            </View> */}
+            
+
             {/* <Text style={styles.statusStyle}>{album.status}</Text>
             <Image
               style={styles.statusimgStyle}
