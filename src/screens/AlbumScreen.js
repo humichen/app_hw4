@@ -2,6 +2,7 @@ import React from "react";
 import { View, FlatList, StyleSheet, Image, Text, TouchableOpacity, TouchableHighlight } from "react-native";
 import {  NavigationContainer,DrawerActions } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createStackNavigator } from '@react-navigation/stack';
 import AlbumDetail from "../components/AlbumDetail";
 import albumData from "../json/albums.json";
 const Tab = createBottomTabNavigator();
@@ -37,58 +38,37 @@ const AlbumScreen = ({ navigation }) => {
           />}
         keyExtractor={item => item.title}
       />
-      <View style={styles.bar}>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.barbox}>
-          <Image
-            style={styles.menuicon}
-            source={{
-              uri: "https://github.com/humichen/app_hw4/blob/master/src/img/icon_bottomnav_home.png?raw=true"
-            }}
-          />
-          <Text style={styles.notselecttext}>Home</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('My Book')} style={styles.barbox}>
-          <Image
-            style={styles.menuicon}
-            source={{
-              uri: "https://github.com/humichen/app_hw4/blob/master/src/img/icon_bottomnav_mybook_selected.png?raw=true"
-            }}
-          />
-          <Text style={styles.selecttext}>My Book</Text>
-        </TouchableOpacity>
-        <TouchableOpacity onPress={() => navigation.navigate('Favorites')} style={styles.barbox}>
-          <Image
-            style={styles.menuicon}
-            source={{
-              uri: "https://github.com/humichen/app_hw4/blob/master/src/img/icon_bottomnav_favorites.png?raw=true"
-            }}
-          />
-          <Text style={styles.notselecttext}>Favorites</Text>
-        </TouchableOpacity>
-      </View>
-      {/* <Tab.Navigator
+    </View>
+  );
+};
+
+const TabScreen = () => {
+  return (
+    
+      <Tab.Navigator
+        initialRouteName="My Book"
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconPath;
 
-            if (route.name === 'Album') {
+            if (route.name === 'Home') {
               iconPath = focused
-              ? require('../img/icon_bottomnav_home.png'):
+              ? require('../img/icon_bottomnav_home_seleced.png'):
               require('../img/icon_bottomnav_home.png');
-            } else if (route.name === 'Settings') {
+            } else if (route.name === 'My Book') {
               iconPath = focused
               ? require('../img/icon_bottomnav_mybook_selected.png'):
-              require('../img/icon_drawer_mybook.png');
-            } else if (route.name == 'Me') {
+              require('../img/icon_bottomnav_mybook.png');
+            } else if (route.name == 'Favorites') {
               iconPath = focused
-              ? require('../img/icon_bottomnav_favorites.png'):
+              ? require('../img/icon_bottomnav_favorites_seleced.png'):
               require('../img/icon_bottomnav_favorites.png');
             }
 
             // You can return any component that you like here!
             return (
               <Image 
-                style={{width: 24, height: 24}}
+                style={{width: 24, height: 24,marginTop:6}}
                 source={iconPath} 
               />
             );
@@ -100,16 +80,20 @@ const AlbumScreen = ({ navigation }) => {
           labelStyle: {
             fontSize: 12,
             marginTop: 0,
+            marginBottom:8,
             padding: 0,
+            height:18,
+          },
+          style:{
+            height:56,
           },
         }}
       >
         <Tab.Screen name="Home" component={AlbumScreen} />
-        <Tab.Screen name="My Book" component={AlbumScreen} />
+        <Tab.Screen name="My Book" component={AlbumScreen}/>
         <Tab.Screen name="Favorites" component={AlbumScreen} />
-      </Tab.Navigator> */}
+      </Tab.Navigator>
 
-    </View>
   );
 };
 
@@ -186,4 +170,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AlbumScreen;
+export default TabScreen;
