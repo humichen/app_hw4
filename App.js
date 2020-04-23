@@ -36,7 +36,6 @@ const CustomDrawerContent = ({ ...props }) => {
   )
 }
 const Drawer = createDrawerNavigator();
-const Tab = createBottomTabNavigator();
 
 const App = () => {
   return (   
@@ -50,7 +49,10 @@ const App = () => {
         }}
         drawerContent={props => <CustomDrawerContent {...props}
           laybelStyle={{ color: "#00b49f", fontWeight: "600" }} />}
-        drawerContentOptions={{ activeBackgroundColor: "#00b49f", activeTintColor: "#fff",  itemStyle: { marginLeft: 0, marginRight: 0, borderRadius: 0 } }}
+        drawerContentOptions={{ 
+          activeBackgroundColor: "#00b49f", 
+          activeTintColor: "#fff",  
+          itemStyle: { marginLeft: 0, marginRight: 0, borderRadius: 0 } }}
       >
         <Drawer.Screen
           name="Home"
